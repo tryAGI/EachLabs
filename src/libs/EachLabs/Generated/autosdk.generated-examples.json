@@ -1,0 +1,70 @@
+{
+  "Examples": [
+    {
+      "Order": 1,
+      "Title": "Get model details",
+      "Slug": "getmodel",
+      "Description": "Retrieve detailed information about a specific model by slug",
+      "Language": "csharp",
+      "Code": "using var client = new EachLabsClient(apiKey);\n\nvar response = await client.AiModels.GetModelAsync(\n    slug: \u0022nano-banana-pro-edit\u0022\n);",
+      "Format": "sdk",
+      "OperationId": "getModel",
+      "Setup": "This example assumes \u0060using EachLabs;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 2,
+      "Title": "List AI models",
+      "Slug": "listmodels",
+      "Description": "Retrieve a paginated list of AI models with optional filters",
+      "Language": "csharp",
+      "Code": "using var client = new EachLabsClient(apiKey);\n\nvar response = await client.AiModels.ListModelsAsync(\n    name: \u0022nano-banana-pro-edit\u0022,\n    limit: 20,\n    offset: 0\n);",
+      "Format": "sdk",
+      "OperationId": "listModels",
+      "Setup": "This example assumes \u0060using EachLabs;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 3,
+      "Title": "Create Model Prediction",
+      "Slug": "createprediction",
+      "Description": "Create a new prediction for a specific model",
+      "Language": "csharp",
+      "Code": "using var client = new EachLabsClient(apiKey);\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::EachLabs.CreatePredictionRequest\u003E(\n    @\u0022{\n  \u0022\u0022model\u0022\u0022: \u0022\u0022flux-1-1-pro\u0022\u0022,\n  \u0022\u0022input\u0022\u0022: {\n    \u0022\u0022prompt\u0022\u0022: \u0022\u0022A beautiful sunset over the ocean with vibrant colors\u0022\u0022,\n    \u0022\u0022aspect_ratio\u0022\u0022: \u0022\u002216:9\u0022\u0022\n  },\n  \u0022\u0022webhook_url\u0022\u0022: \u0022\u0022https://your-app.com/webhook\u0022\u0022,\n  \u0022\u0022webhook_secret\u0022\u0022: \u0022\u0022your-secret-key\u0022\u0022\n}\u0022)!;\n\nvar response = await client.AiModelsPrediction.CreatePredictionAsync(\n    request: request\n);\n\n// Example response:\n// {\n//   \u0022status\u0022: \u0022success\u0022,\n//   \u0022message\u0022: \u0022Prediction created successfully\u0022,\n//   \u0022predictionID\u0022: \u0022abc123-def456-ghi789\u0022\n// }",
+      "Format": "sdk",
+      "OperationId": "createPrediction",
+      "Setup": "This example assumes \u0060using EachLabs;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 4,
+      "Title": "Get Model Prediction",
+      "Slug": "getprediction",
+      "Description": "Retrieve the status and results of a model prediction by its ID",
+      "Language": "csharp",
+      "Code": "using var client = new EachLabsClient(apiKey);\n\nvar response = await client.AiModelsPrediction.GetPredictionAsync(\n    id: \u0022abc123-def456-ghi789\u0022\n);\n\n// Example response:\n// {\n//   \u0022id\u0022: \u0022abc123-def456-ghi789\u0022,\n//   \u0022input\u0022: {\n//     \u0022prompt\u0022: \u0022A beautiful sunset over the ocean with vibrant colors\u0022,\n//     \u0022aspect_ratio\u0022: \u002216:9\u0022\n//   },\n//   \u0022status\u0022: \u0022success\u0022,\n//   \u0022output\u0022: \u0022https://storage.example.com/predictions/abc123/image.jpg\u0022,\n//   \u0022logs\u0022: \u0022openapi-json-null-sentinel-value-2BF93600-0FE4-4250-987A-E5DDB203E464\u0022,\n//   \u0022metrics\u0022: {\n//     \u0022predict_time\u0022: 12.5,\n//     \u0022cost\u0022: 0.05\n//   },\n//   \u0022urls\u0022: {\n//     \u0022cancel\u0022: \u0022https://api.eachlabs.ai/v1/prediction/abc123-def456-ghi789/cancel\u0022,\n//     \u0022get\u0022: \u0022https://api.eachlabs.ai/v1/prediction/abc123-def456-ghi789\u0022\n//   }\n// }",
+      "Format": "sdk",
+      "OperationId": "getPrediction",
+      "Setup": "This example assumes \u0060using EachLabs;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 5,
+      "Title": "Get webhook by execution ID",
+      "Slug": "getwebhook",
+      "Description": "Retrieve details of a specific webhook including delivery attempts by execution ID",
+      "Language": "csharp",
+      "Code": "using var client = new EachLabsClient(apiKey);\n\nvar response = await client.Webhooks.GetWebhookAsync(\n    executionId: \u0022abc123-def456-ghi789\u0022\n);",
+      "Format": "sdk",
+      "OperationId": "getWebhook",
+      "Setup": "This example assumes \u0060using EachLabs;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 6,
+      "Title": "List webhooks",
+      "Slug": "listwebhooks",
+      "Description": "Retrieve a paginated list of webhooks for the authenticated organization",
+      "Language": "csharp",
+      "Code": "using var client = new EachLabsClient(apiKey);\n\nvar response = await client.Webhooks.ListWebhooksAsync(\n    limit: 50,\n    offset: 0\n);",
+      "Format": "sdk",
+      "OperationId": "listWebhooks",
+      "Setup": "This example assumes \u0060using EachLabs;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    }
+  ]
+}
