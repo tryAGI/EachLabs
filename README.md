@@ -2,7 +2,7 @@
   <h1>EachLabs</h1>
   <p class="docs-hero-lead">Modern .NET SDK for EachLabs generated from the provider's OpenAPI definition with AutoSDK.</p>
   <div class="docs-badge-row">
-    <a href="https://www.nuget.org/packages/EachLabs/"><img alt="Nuget package" src="https://img.shields.io/nuget/vpre/EachLabs"></a>
+    <a href="https://www.nuget.org/packages/EachLabsAI/"><img alt="Nuget package" src="https://img.shields.io/nuget/vpre/EachLabsAI"></a>
     <a href="https://github.com/tryAGI/EachLabs/actions/workflows/dotnet.yml"><img alt="dotnet" src="https://github.com/tryAGI/EachLabs/actions/workflows/dotnet.yml/badge.svg?branch=main"></a>
     <a href="https://github.com/tryAGI/EachLabs/blob/main/LICENSE.txt"><img alt="License: MIT" src="https://img.shields.io/github/license/tryAGI/EachLabs"></a>
     <a href="https://discord.gg/Ca2xhfBf3v"><img alt="Discord" src="https://img.shields.io/discord/1115206893015662663?label=Discord&amp;logo=discord&amp;logoColor=white&amp;color=d82679"></a>

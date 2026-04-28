@@ -8,7 +8,7 @@ The EachLabs SDK provides integration with [Microsoft.Extensions.AI](https://lea
 ## Installation
 
 ```bash
-dotnet add package EachLabs
+dotnet add package EachLabsAI
 ```
 
 ## Usage
