@@ -44,7 +44,7 @@ namespace EachLabs
         /// <summary>
         /// Endpoints for listing and retrieving AI models and other resources.
         /// </summary>
-        public AiModelsClient AiModels => new AiModelsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public AiModelsClient AiModels => new AiModelsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -53,7 +53,7 @@ namespace EachLabs
         /// <summary>
         /// Endpoints for managing model predictions.
         /// </summary>
-        public AiModelsPredictionClient AiModelsPrediction => new AiModelsPredictionClient(HttpClient, authorizations: Authorizations, options: Options)
+        public AiModelsPredictionClient AiModelsPrediction => new AiModelsPredictionClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -63,7 +63,7 @@ namespace EachLabs
         /// Endpoints for retrieving webhook information and delivery history.<br/>
         /// **Note:** Currently, webhooks are only supported for Workflows V2. We are actively expanding webhook support to other services and will update this documentation as new integrations become available.
         /// </summary>
-        public WebhooksClient Webhooks => new WebhooksClient(HttpClient, authorizations: Authorizations, options: Options)
+        public WebhooksClient Webhooks => new WebhooksClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -102,10 +102,10 @@ namespace EachLabs
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public EachLabsClient(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::EachLabs.EndPointAuthorization>? authorizations = null,
-            global::EachLabs.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::EachLabs.EndPointAuthorization>? authorizations,
+            global::EachLabs.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 
