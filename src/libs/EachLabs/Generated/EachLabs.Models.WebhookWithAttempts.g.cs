@@ -29,6 +29,19 @@ namespace EachLabs
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickWebhook(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::EachLabs.Webhook? value)
+        {
+            value = Webhook;
+            return IsWebhook;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::EachLabs.WebhookWithAttemptsVariant2? WebhookWithAttemptsVariant2 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace EachLabs
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebhookWithAttemptsVariant2))]
 #endif
         public bool IsWebhookWithAttemptsVariant2 => WebhookWithAttemptsVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickWebhookWithAttemptsVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::EachLabs.WebhookWithAttemptsVariant2? value)
+        {
+            value = WebhookWithAttemptsVariant2;
+            return IsWebhookWithAttemptsVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace EachLabs
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::EachLabs.Webhook?, TResult>? webhook = null,
-            global::System.Func<global::EachLabs.WebhookWithAttemptsVariant2?, TResult>? webhookWithAttemptsVariant2 = null,
+            global::System.Func<global::EachLabs.Webhook, TResult>? webhook = null,
+            global::System.Func<global::EachLabs.WebhookWithAttemptsVariant2, TResult>? webhookWithAttemptsVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace EachLabs
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::EachLabs.Webhook?>? webhook = null,
-            global::System.Action<global::EachLabs.WebhookWithAttemptsVariant2?>? webhookWithAttemptsVariant2 = null,
+            global::System.Action<global::EachLabs.Webhook>? webhook = null,
+
+            global::System.Action<global::EachLabs.WebhookWithAttemptsVariant2>? webhookWithAttemptsVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsWebhook)
+            {
+                webhook?.Invoke(Webhook!);
+            }
+            else if (IsWebhookWithAttemptsVariant2)
+            {
+                webhookWithAttemptsVariant2?.Invoke(WebhookWithAttemptsVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::EachLabs.Webhook>? webhook = null,
+            global::System.Action<global::EachLabs.WebhookWithAttemptsVariant2>? webhookWithAttemptsVariant2 = null,
             bool validate = true)
         {
             if (validate)
