@@ -81,6 +81,7 @@ namespace EachLabs.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::EachLabs.Webhook), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::EachLabs.Webhook> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::EachLabs.Webhook).Name}");
                     webhook = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -91,9 +92,13 @@ namespace EachLabs.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (webhook == null && webhookWithAttemptsVariant2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::EachLabs.WebhookWithAttemptsVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::EachLabs.WebhookWithAttemptsVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::EachLabs.WebhookWithAttemptsVariant2).Name}");
                     webhookWithAttemptsVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
