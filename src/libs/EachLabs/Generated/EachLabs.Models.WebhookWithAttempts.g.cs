@@ -89,6 +89,11 @@ namespace EachLabs
         /// <summary>
         /// 
         /// </summary>
+        public static WebhookWithAttempts FromWebhook(global::EachLabs.Webhook? value) => new WebhookWithAttempts(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator WebhookWithAttempts(global::EachLabs.WebhookWithAttemptsVariant2 value) => new WebhookWithAttempts((global::EachLabs.WebhookWithAttemptsVariant2?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace EachLabs
         {
             WebhookWithAttemptsVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static WebhookWithAttempts FromWebhookWithAttemptsVariant2(global::EachLabs.WebhookWithAttemptsVariant2? value) => new WebhookWithAttempts(value);
 
         /// <summary>
         /// 
