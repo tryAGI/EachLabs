@@ -42,6 +42,13 @@ namespace EachLabs
         /// <summary>
         /// 
         /// </summary>
+        public global::EachLabs.Webhook PickWebhook() => IsWebhook
+            ? Webhook!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Webhook' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::EachLabs.WebhookWithAttemptsVariant2? WebhookWithAttemptsVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace EachLabs
             value = WebhookWithAttemptsVariant2;
             return IsWebhookWithAttemptsVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::EachLabs.WebhookWithAttemptsVariant2 PickWebhookWithAttemptsVariant2() => IsWebhookWithAttemptsVariant2
+            ? WebhookWithAttemptsVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'WebhookWithAttemptsVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

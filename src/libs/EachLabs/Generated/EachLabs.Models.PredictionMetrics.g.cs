@@ -58,5 +58,6 @@ namespace EachLabs
         public PredictionMetrics()
         {
         }
+
     }
 }
