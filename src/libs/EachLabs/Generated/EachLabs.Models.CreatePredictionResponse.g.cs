@@ -72,5 +72,6 @@ namespace EachLabs
         public CreatePredictionResponse()
         {
         }
+
     }
 }
