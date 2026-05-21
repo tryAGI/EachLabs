@@ -41,5 +41,6 @@ namespace EachLabs
         public WebhookWithAttemptsVariant2()
         {
         }
+
     }
 }

@@ -93,5 +93,6 @@ namespace EachLabs
         public ModelDetail()
         {
         }
+
     }
 }

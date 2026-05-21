@@ -99,5 +99,6 @@ namespace EachLabs
         public CreatePredictionRequest()
         {
         }
+
     }
 }
