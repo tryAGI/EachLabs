@@ -40,6 +40,13 @@ using EachLabs;
 using var client = new EachLabsClient(apiKey);
 ```
 
+### CLI
+
+```bash
+dotnet tool install --global EachLabs.CLI --prerelease
+each-labs api --help
+```
+
 <!-- EXAMPLES:START -->
 <!-- EXAMPLES:END -->
 
