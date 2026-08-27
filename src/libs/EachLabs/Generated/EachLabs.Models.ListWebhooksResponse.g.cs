@@ -4,12 +4,12 @@
 namespace EachLabs
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ListWebhooksResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("webhooks")]
         [global::System.Text.Json.Serialization.JsonRequired]

@@ -5,7 +5,7 @@
 namespace EachLabs
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct WebhookWithAttempts : global::System.IEquatable<WebhookWithAttempts>
     {
@@ -19,7 +19,7 @@ namespace EachLabs
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Webhook))]
@@ -27,7 +27,7 @@ namespace EachLabs
         public bool IsWebhook => Webhook != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickWebhook(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace EachLabs
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::EachLabs.Webhook PickWebhook() => IsWebhook
             ? Webhook!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Webhook' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::EachLabs.WebhookWithAttemptsVariant2? WebhookWithAttemptsVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace EachLabs
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(WebhookWithAttemptsVariant2))]
@@ -64,7 +64,7 @@ namespace EachLabs
         public bool IsWebhookWithAttemptsVariant2 => WebhookWithAttemptsVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickWebhookWithAttemptsVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace EachLabs
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::EachLabs.WebhookWithAttemptsVariant2 PickWebhookWithAttemptsVariant2() => IsWebhookWithAttemptsVariant2
             ? WebhookWithAttemptsVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebhookWithAttemptsVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator WebhookWithAttempts(global::EachLabs.Webhook value) => new WebhookWithAttempts((global::EachLabs.Webhook?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::EachLabs.Webhook?(WebhookWithAttempts @this) => @this.Webhook;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public WebhookWithAttempts(global::EachLabs.Webhook? value)
         {
@@ -101,22 +101,22 @@ namespace EachLabs
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static WebhookWithAttempts FromWebhook(global::EachLabs.Webhook? value) => new WebhookWithAttempts(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator WebhookWithAttempts(global::EachLabs.WebhookWithAttemptsVariant2 value) => new WebhookWithAttempts((global::EachLabs.WebhookWithAttemptsVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::EachLabs.WebhookWithAttemptsVariant2?(WebhookWithAttempts @this) => @this.WebhookWithAttemptsVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public WebhookWithAttempts(global::EachLabs.WebhookWithAttemptsVariant2? value)
         {
@@ -124,12 +124,12 @@ namespace EachLabs
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static WebhookWithAttempts FromWebhookWithAttemptsVariant2(global::EachLabs.WebhookWithAttemptsVariant2? value) => new WebhookWithAttempts(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public WebhookWithAttempts(
             global::EachLabs.Webhook? webhook,
@@ -141,23 +141,23 @@ namespace EachLabs
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             WebhookWithAttemptsVariant2 as object ??
-            Webhook as object 
+            Webhook as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Webhook?.ToString() ??
-            WebhookWithAttemptsVariant2?.ToString() 
+            WebhookWithAttemptsVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace EachLabs
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::EachLabs.Webhook, TResult>? webhook = null,
@@ -190,7 +190,7 @@ namespace EachLabs
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::EachLabs.Webhook>? webhook = null,
@@ -214,7 +214,7 @@ namespace EachLabs
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::EachLabs.Webhook>? webhook = null,
@@ -237,7 +237,7 @@ namespace EachLabs
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace EachLabs
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(WebhookWithAttempts other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::EachLabs.Webhook?>.Default.Equals(Webhook, other.Webhook) &&
-                global::System.Collections.Generic.EqualityComparer<global::EachLabs.WebhookWithAttemptsVariant2?>.Default.Equals(WebhookWithAttemptsVariant2, other.WebhookWithAttemptsVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::EachLabs.WebhookWithAttemptsVariant2?>.Default.Equals(WebhookWithAttemptsVariant2, other.WebhookWithAttemptsVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(WebhookWithAttempts obj1, WebhookWithAttempts obj2)
         {
@@ -277,7 +277,7 @@ namespace EachLabs
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(WebhookWithAttempts obj1, WebhookWithAttempts obj2)
         {
@@ -285,7 +285,7 @@ namespace EachLabs
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {
