@@ -10,15 +10,15 @@ namespace EachLabs
     public enum WebhookAttemptStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Failed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pending,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Success,
     }

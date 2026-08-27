@@ -10,23 +10,23 @@ namespace EachLabs
     public enum PredictionStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cancelled,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Failed,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Processing,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Starting,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Success,
     }

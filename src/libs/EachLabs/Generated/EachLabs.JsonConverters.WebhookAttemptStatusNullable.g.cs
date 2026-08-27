@@ -20,7 +20,7 @@ namespace EachLabs.JsonConverters
                     {
                         return global::EachLabs.WebhookAttemptStatusExtensions.ToEnum(stringValue);
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:
