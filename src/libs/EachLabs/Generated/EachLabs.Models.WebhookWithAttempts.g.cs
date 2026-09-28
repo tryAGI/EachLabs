@@ -42,8 +42,8 @@ namespace EachLabs
         /// <summary>
         ///
         /// </summary>
-        public global::EachLabs.Webhook PickWebhook() => IsWebhook
-            ? Webhook!
+        public global::EachLabs.Webhook PickWebhook() => Webhook is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Webhook' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace EachLabs
         /// <summary>
         ///
         /// </summary>
-        public global::EachLabs.WebhookWithAttemptsVariant2 PickWebhookWithAttemptsVariant2() => IsWebhookWithAttemptsVariant2
-            ? WebhookWithAttemptsVariant2!
+        public global::EachLabs.WebhookWithAttemptsVariant2 PickWebhookWithAttemptsVariant2() => WebhookWithAttemptsVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'WebhookWithAttemptsVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace EachLabs
                 Validate();
             }
 
-            if (IsWebhook && webhook != null)
+            if (Webhook is { } __value0 && webhook != null)
             {
-                return webhook(Webhook!);
+                return webhook(__value0);
             }
-            else if (IsWebhookWithAttemptsVariant2 && webhookWithAttemptsVariant2 != null)
+            else if (WebhookWithAttemptsVariant2 is { } __value1 && webhookWithAttemptsVariant2 != null)
             {
-                return webhookWithAttemptsVariant2(WebhookWithAttemptsVariant2!);
+                return webhookWithAttemptsVariant2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace EachLabs
                 Validate();
             }
 
-            if (IsWebhook)
+            if (Webhook is { } __value0)
             {
-                webhook?.Invoke(Webhook!);
+                webhook?.Invoke(__value0);
             }
-            else if (IsWebhookWithAttemptsVariant2)
+            else if (WebhookWithAttemptsVariant2 is { } __value1)
             {
-                webhookWithAttemptsVariant2?.Invoke(WebhookWithAttemptsVariant2!);
+                webhookWithAttemptsVariant2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace EachLabs
                 Validate();
             }
 
-            if (IsWebhook)
+            if (Webhook is { } __value0)
             {
-                webhook?.Invoke(Webhook!);
+                webhook?.Invoke(__value0);
             }
-            else if (IsWebhookWithAttemptsVariant2)
+            else if (WebhookWithAttemptsVariant2 is { } __value1)
             {
-                webhookWithAttemptsVariant2?.Invoke(WebhookWithAttemptsVariant2!);
+                webhookWithAttemptsVariant2?.Invoke(__value1);
             }
         }
 
