@@ -33,6 +33,8 @@ internal static partial class WebhooksGetWebhookCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"get-webhook", @"Get webhook by execution ID
@@ -59,6 +61,7 @@ Retrieve details of a specific webhook including delivery attempts by execution 
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }

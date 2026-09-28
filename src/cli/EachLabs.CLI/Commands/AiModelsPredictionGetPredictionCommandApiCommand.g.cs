@@ -33,6 +33,8 @@ internal static partial class AiModelsPredictionGetPredictionCommandApiCommand
                     static partial void CustomizeResponseFormatHints(Dictionary<string, CliFormatHint> hints);
 
 
+    static partial void CustomizeCommand(ref Command command);
+
     public static Command Create()
     {
         var command = new Command(@"get-prediction", @"Get Model Prediction
@@ -59,6 +61,7 @@ Retrieve the status and results of a model prediction by its ID");
                                     FormatResponse,
                                     cancellationToken).ConfigureAwait(false);
             }, cancellationToken).ConfigureAwait(false));
+        CustomizeCommand(ref command);
         return command;
     }
 }
