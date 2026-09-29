@@ -71,9 +71,9 @@ internal static partial class AiModelsPredictionCreatePredictionCommandApiComman
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"create-prediction", @"Create Model Prediction
+        var command = new Command(commandName ?? @"create-prediction", @"Create Model Prediction
 Create a new prediction for a specific model");
                         command.Options.Add(Model);
                         command.Options.Add(InputOption);

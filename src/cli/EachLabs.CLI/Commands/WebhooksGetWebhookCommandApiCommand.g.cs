@@ -35,9 +35,9 @@ internal static partial class WebhooksGetWebhookCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-webhook", @"Get webhook by execution ID
+        var command = new Command(commandName ?? @"get-webhook", @"Get webhook by execution ID
 Retrieve details of a specific webhook including delivery attempts by execution ID");
                         command.Arguments.Add(ExecutionId);
 

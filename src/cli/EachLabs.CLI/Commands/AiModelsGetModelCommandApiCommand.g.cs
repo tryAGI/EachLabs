@@ -36,9 +36,9 @@ internal static partial class AiModelsGetModelCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-model", @"Get model details
+        var command = new Command(commandName ?? @"get-model", @"Get model details
 Retrieve detailed information about a specific model by slug");
                         command.Options.Add(Slug);
 

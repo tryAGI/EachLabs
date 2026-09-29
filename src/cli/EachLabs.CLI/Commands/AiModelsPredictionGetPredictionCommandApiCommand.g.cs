@@ -35,9 +35,9 @@ internal static partial class AiModelsPredictionGetPredictionCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"get-prediction", @"Get Model Prediction
+        var command = new Command(commandName ?? @"get-prediction", @"Get Model Prediction
 Retrieve the status and results of a model prediction by its ID");
                         command.Arguments.Add(Id);
 
