@@ -41,9 +41,9 @@ internal static partial class WebhooksListWebhooksCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-webhooks", @"List webhooks
+        var command = new Command(commandName ?? @"list-webhooks", @"List webhooks
 Retrieve a paginated list of webhooks for the authenticated organization");
                         command.Options.Add(Limit);
                         command.Options.Add(Offset);

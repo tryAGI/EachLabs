@@ -47,9 +47,9 @@ internal static partial class AiModelsListModelsCommandApiCommand
 
     static partial void CustomizeCommand(ref Command command);
 
-    public static Command Create()
+    public static Command Create(string? commandName = null)
     {
-        var command = new Command(@"list-models", @"List AI models
+        var command = new Command(commandName ?? @"list-models", @"List AI models
 Retrieve a paginated list of AI models with optional filters");
                         command.Options.Add(NameOption);
                         command.Options.Add(Limit);
