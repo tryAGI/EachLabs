@@ -14,5 +14,6 @@ rootCommand.Subcommands.Add(AuthCommand.Create());
 rootCommand.Subcommands.Add(AIModelsApiGroupCommand.Create());
 rootCommand.Subcommands.Add(AIModelsPredictionApiGroupCommand.Create());
 rootCommand.Subcommands.Add(WebhooksApiGroupCommand.Create());
+rootCommand.Subcommands.Add(CliCompletion.CreateCommand(rootCommand, @"each-labs"));
 
 return await rootCommand.Parse(args).InvokeAsync().ConfigureAwait(false);
